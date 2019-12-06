@@ -4,7 +4,7 @@ Re-implementation of the winning method in MICCAI 2017 WMH segmentation challeng
 ![Repo_list](images/whm_example.png)
 ### Description
 
-This repository contains my re-emplemenation of the github code for segmentation White matter hyperintensities (WMH) on FLAIR/T1 mri data. The purpose is to use a CNN approach to segment WHM on FLAIR/T1 data acquired on a 3T Prisma Scanner with 1mm isotropic resolution. The scripts can be run using command line arguments so that they can be intergrated in your MRI data analysis pipeline.
+This repository contains my re-emplemenation of the github code for segmentation White matter hyperintensities (WMH) on FLAIR/T1 mri data. The purpose was to use a CNN approach to segment WHM on 3D FLAIR/T1 data acquired on a 3T Prisma Scanner with *1mm isotropic* resolution in [Cubric](https://www.cardiff.ac.uk/cardiff-university-brain-research-imaging-centre). The scripts can be run using command line arguments so that they can be intergrated in your MRI data analysis pipeline.
 
 The main changes are the following: 
 - Code is now compatible with **TensorFlow2** and **Keras 2.3.1**
@@ -22,7 +22,7 @@ Requirements:
 Keras 2.3.1, TensorFlow 2.0, Python 3.6.8, h5py, scipy, nipype (Ants/Afni), nibabel 
 ```
 
-##### Important Note: use optional arguments to plot QC images (ouput should be axial slices as in example above). Images are expected to be in the format x,y by z(axial slices), i.e. shape is 200x200x150 (150 slices in z direction) upon loading with nibael. Axes can be swapped differently by modifying the code.
+##### Important Note: use optional arguments to save and QC images (ouput should be axial slices as in example above). Images are expected to be in the format x,y by z(axial slices), i.e. shape is 200x200x150 (150 slices in z direction) upon loading with nibael. Axes can be swapped differently by modifying the code.
 
 For each participant preprocess a pair of T1 and T2 FLAIR using preproc_FLAIR_MPRAGE.py (mask argument is optional, if not provided it will skullstrip the T1 image using [antsBrainExtraction.sh](https://github.com/ANTsX/ANTs/blob/master/Scripts/antsBrainExtraction.sh) using the [OASIS template](https://osf.io/rh9km/) which is time consuming)  
 
