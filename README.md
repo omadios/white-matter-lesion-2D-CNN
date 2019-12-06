@@ -3,7 +3,7 @@ Re-implementation of the winning method in MICCAI 2017 WMH segmentation challeng
 
 Network Architecture:
 
-![Repo_list](images/architecture.png)
+![Repo_list](images/architecture.jpg)
 
 Example of results on MRI data acquired in [Cubric](https://www.cardiff.ac.uk/cardiff-university-brain-research-imaging-centre)
 
