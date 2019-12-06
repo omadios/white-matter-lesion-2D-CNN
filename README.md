@@ -1,5 +1,5 @@
 # wmh_MICCAI_tf2
-Re-implementation of the winning method in MICCAI 2017 WMH segmentation challenge in TensorFlow2  (https://github.com/hongweilibran/wmh_ibbmTum)
+Re-implementation of the winning method in MICCAI 2017 WMH segmentation challenge in TensorFlow2  (https://github.com/hongweilibran/wmh_ibbmTum): **uses CNN with a U-net based architecture**
 
 ![Repo_list](images/whm_example.png)
 ### Description
@@ -14,13 +14,15 @@ The main changes are the following:
 - Added a script to concatenate and QC training examples
 
 
-### Instructions
+## Instructions
 
 All code runs on Python 3. In order to run the code the following libraries and MRI tool are required (which can be installed in a conda environment):
 ```
 Requirements: 
 Keras 2.3.1, TensorFlow 2.0, Python 3.6.8, h5py, scipy, nipype (Ants/Afni), nibabel 
 ```
+
+##### Important Note: use optional arguments to plot QC images (ouput should be axial slices as in example above). Images are expected to be in the format x,y by z(axial slices), i.e. shape is 200x200x150 (150 slices in z direction) upon loading with nibael. Axes can be swapped differently by modifying the code.
 
 For each participant preprocess a pair of T1 and T2 FLAIR using preproc_FLAIR_MPRAGE.py (mask argument is optional, if not provided it will skullstrip the T1 image using [antsBrainExtraction.sh](https://github.com/ANTsX/ANTs/blob/master/Scripts/antsBrainExtraction.sh) using the [OASIS template](https://osf.io/rh9km/) which is time consuming)  
 
@@ -35,7 +37,7 @@ python miccai_segment.py -f pid01.FLAIR.nii.gz -t pid01.mprage.to_FLAIR.nii.gz -
 
 ```
 
-To retrain the original network on some novel training data (i.e. from your scanner) use the following script (which expects all the outputs from *preproc_FLAIR_MPRAGE.py* to be in a single folder. Two output *.npy files (one for T1/FLAIR images and one for masks) will be generated.
+Assembling a dataset to retrain the original network on some novel training data (i.e. from your scanner).  Use the following script (which expects all the outputs from *preproc_FLAIR_MPRAGE.py* to be in a single folder. Two output *.npy files (one for T1/FLAIR images and one for masks) will be generated.
 
 ```
 python build_dataset_for_miccai.py
