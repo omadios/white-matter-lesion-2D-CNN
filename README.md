@@ -1,13 +1,17 @@
 # wmh_MICCAI_tf2
-Re-implementation of the winning method in MICCAI 2017 WMH segmentation challenge in TensorFlow2 created by **Hongwei Li et al.** ([github](https://github.com/hongweilibran/wmh_ibbmTum), [original paper](https://doi.org/10.1016/j.neuroimage.2018.07.005)]: the method **uses ensemble CNNs with a U-net based architecture** to segment White Matter Hyperintensities (WHM).
+Re-implementation of the winning method in MICCAI 2017 WMH segmentation challenge in TensorFlow2 created by **Hongwei Li et al.** ([github](https://github.com/hongweilibran/wmh_ibbmTum), [original paper](https://doi.org/10.1016/j.neuroimage.2018.07.005)]: the method **uses a 2D Convolutional Neural Network (CNN) Architecture based on U-net** to segment White Matter Hyperintensities (WHM).
 
 Network Architecture:
 
+
 ![Repo_list](images/architecture.jpg)
+
 
 Example of results on MRI data acquired in [Cubric](https://www.cardiff.ac.uk/cardiff-university-brain-research-imaging-centre)
 
+
 ![Repo_list](images/whm_example.png)
+
 ### Description
 
 This repository contains my re-emplemenation of the github code for segmentation White matter hyperintensities (WMH) on FLAIR/T1 mri data. The purpose was to use a CNN approach to segment WHM on 3D FLAIR/T1 data acquired on a 3T Prisma Scanner with *1mm isotropic* resolution in [Cubric](https://www.cardiff.ac.uk/cardiff-university-brain-research-imaging-centre). The scripts can be run using command line arguments so that they can be intergrated in your MRI data analysis pipeline.
