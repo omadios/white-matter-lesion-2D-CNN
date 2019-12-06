@@ -50,7 +50,7 @@ python miccai_segment.py -f pid01.FLAIR.nii.gz -t pid01.mprage.to_FLAIR.nii.gz -
 Assembling a dataset to retrain the original network on some novel training data (i.e. from your scanner).  Use the following script (which expects all the outputs from *preproc_FLAIR_MPRAGE.py* to be in a single folder. Two output *.npy files (one for T1/FLAIR images and one for masks) will be generated.
 
 ```
-python build_dataset_for_miccai.py
+python build_dataset_for_miccai.py -f myfolder/
 
 ```
 To retrain a single network (using a Keras Initializers, or other custom weights (e.g. from the original [repository]( https://github.com/hongweilibran/wmh_ibbmTum)) on a GPU use the following:
