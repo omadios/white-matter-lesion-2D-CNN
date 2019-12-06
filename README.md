@@ -1,6 +1,12 @@
 # wmh_MICCAI_tf2
 Re-implementation of the winning method in MICCAI 2017 WMH segmentation challenge in TensorFlow2 created by **Hongwei Li et al.** ([github](https://github.com/hongweilibran/wmh_ibbmTum), [original paper](https://doi.org/10.1016/j.neuroimage.2018.07.005)]: the method **uses ensemble CNNs with a U-net based architecture** to segment White Matter Hyperintensities (WHM).
 
+Network Architecture:
+
+![Repo_list](images/architecture.png)
+
+Example of results on MRI data acquired in [Cubric](https://www.cardiff.ac.uk/cardiff-university-brain-research-imaging-centre)
+
 ![Repo_list](images/whm_example.png)
 ### Description
 
