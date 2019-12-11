@@ -59,3 +59,9 @@ To retrain a single network (using a Keras Initializers, or other custom weights
 python miccai_train_on_new_data.py
 ```
 Training logs and weights will be saved
+
+## Training Results
+
+Result for CNN training using 80:20 training:valudation split 
+
+![Repo_list](images/loss_curve.png)
