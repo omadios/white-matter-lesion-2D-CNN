@@ -1,16 +1,22 @@
-# wmh_MICCAI_tf2
-Re-implementation of the winning method in MICCAI 2017 WMH segmentation challenge created by **Hongwei Li et al.** ([github](https://github.com/hongweilibran/wmh_ibbmTum), [original paper](https://doi.org/10.1016/j.neuroimage.2018.07.005)] in TensorFlow2/Keras 2 API: the method **uses a 2D Convolutional Neural Network (CNN) Architecture based on U-net** to segment White Matter Hyperintensities (WHM).
+# MRI segmentation - lesion detection via CNN
+Re-implementation of the winning method in MICCAI 2017 (a competition to determine the best method for automatic segmentation of White Matter Hyperintensities (WMH) of presumed vascular origin). 
+
+
+![Lesion_detection_CNN](images/whm_example.png "lesion detection via CNN")
+
+
+reated by **Hongwei Li et al.** ([github](https://github.com/hongweilibran/wmh_ibbmTum), [original paper](https://doi.org/10.1016/j.neuroimage.2018.07.005)] in TensorFlow2/Keras 2 API: the method **uses a 2D Convolutional Neural Network (CNN) Architecture based on U-net** to segment White Matter Hyperintensities (WHM).
 
 Network Architecture:
 
 
 ![Repo_list](images/architecture.jpg)
-
+|:--:|
+| Low resolution image (left), ISR output (center), bicubic scaling (right). Click to zoom. |
 
 Example of results on MRI data acquired in [Cubric](https://www.cardiff.ac.uk/cardiff-university-brain-research-imaging-centre)
 
 
-![Repo_list](images/whm_example.png)
 
 ### Description
 
@@ -24,7 +30,7 @@ The main changes are the following:
 - Added a script to concatenate and QC training examples
 
 
-## Instructions
+## Installation
 
 All code runs on Python 3. In order to run the code the following libraries and MRI tool are required (which can be installed in a conda environment):
 ```
@@ -33,6 +39,8 @@ Keras 2.3.1, TensorFlow 2.0, Python 3.6.8, h5py, scipy, nipype (Ants/Afni), niba
 ```
 
 ##### Important Note: use optional arguments to save and QC images (ouput should be axial slices as in example above). Images are expected to be in the format x,y by z(axial slices), i.e. shape is 200x200x150 (150 slices in head to foot direction) upon loading with nibael. Axes can be swapped differently by modifying the code.
+
+## Usage
 
 For each participant preprocess a pair of T1 and T2 FLAIR using preproc_FLAIR_MPRAGE.py (mask argument is optional, if not provided it will skullstrip the T1 image using [antsBrainExtraction.sh](https://github.com/ANTsX/ANTs/blob/master/Scripts/antsBrainExtraction.sh) using the [OASIS template](https://osf.io/rh9km/) which is time consuming)  
 
