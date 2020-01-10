@@ -1,24 +1,30 @@
 # MRI segmentation - lesion detection via CNN
-Re-implementation of the winning method in MICCAI 2017 (a competition to determine the best method for automatic segmentation of White Matter Hyperintensities (WMH) of presumed vascular origin). 
 
+Automatic detection of  White Matter Hyperintensities (WMH) of presumed vascular origin in MRI images using a **2D Convolutional Neural Network (CNN) Architecture based on U-net**.
+
+This repository contains my re-implementation of the winning method in MICCAI 2017 (an international competition to determine the best method for automatic segmentation WMHs) in in TensorFlow2/Keras 2 API.
 
 ![Lesion_detection_CNN](images/whm_example.png "lesion detection via CNN")
+|:--:|
+| Example of prediction of WMHs on an axial slice of a MRI FLAIR image acquired in [Cubric](https://www.cardiff.ac.uk/cardiff-university-brain-research-imaging-centre)  |
 
-
-reated by **Hongwei Li et al.** ([github](https://github.com/hongweilibran/wmh_ibbmTum), [original paper](https://doi.org/10.1016/j.neuroimage.2018.07.005)] in TensorFlow2/Keras 2 API: the method **uses a 2D Convolutional Neural Network (CNN) Architecture based on U-net** to segment White Matter Hyperintensities (WHM).
+The original architecture was created by **Hongwei Li et al.** ([github](https://github.com/hongweilibran/wmh_ibbmTum), [original paper](https://doi.org/10.1016/j.neuroimage.2018.07.005)]
 
 Network Architecture:
 
 
-![Repo_list](images/architecture.jpg)
+![Architecture](images/architecture.jpg)
 |:--:|
-| Low resolution image (left), ISR output (center), bicubic scaling (right). Click to zoom. |
-
-Example of results on MRI data acquired in [Cubric](https://www.cardiff.ac.uk/cardiff-university-brain-research-imaging-centre)
+| Architecture of the CNN. Click to zoom. |
 
 
+## Contents
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Training Results](#training-results)
 
-### Description
+## Description
 
 This repository contains my re-emplemenation of the github code for segmentation White matter hyperintensities (WMH) on FLAIR/T1 mri data. The purpose was to use a CNN approach to segment WHM on 3D FLAIR/T1 data acquired on a 3T Prisma Scanner with *1mm isotropic* resolution in [Cubric](https://www.cardiff.ac.uk/cardiff-university-brain-research-imaging-centre). The scripts can be run using command line arguments so that they can be intergrated in your MRI data analysis pipeline.
 
@@ -32,8 +38,8 @@ The main changes are the following:
 
 ## Installation
 
-All code runs on Python 3. In order to run the code the following libraries and MRI tool are required (which can be installed in a conda environment):
-```
+All code runs on Python 3.6 In order to run the code the following libraries and MRI tool are required (which can be installed in a conda environment):
+`
 Requirements: 
 Keras 2.3.1, TensorFlow 2.0, Python 3.6.8, h5py, scipy, nipype (Ants/Afni), nibabel 
 ```
