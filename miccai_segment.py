@@ -152,7 +152,7 @@ def get_unet(img_shape = None):
         pool3 = MaxPooling2D(pool_size=(2, 2), data_format="channels_last")(conv3)
 
         conv4 = Conv2D(256, (3, 3), activation='relu', padding='same', data_format="channels_last")(pool3)
-        conv4 = Conv2D(256, (4, 4), activation='relu', padding='same', data_format="channels_last")(conv4)
+        conv4 = Conv2D(256, (3, 3), activation='relu', padding='same', data_format="channels_last")(conv4)
         pool4 = MaxPooling2D(pool_size=(2, 2), data_format="channels_last")(conv4)
 
         conv5 = Conv2D(512, (3, 3), activation='relu', padding='same', data_format="channels_last")(pool4)
